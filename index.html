@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IACK</title>
+  <meta name="description" content="IACK is a research-oriented cybersecurity framework focused on integrity, authenticity, confidentiality, and key management." />
+  <style>
+    :root {
+      --bg: #0a1013;
+      --panel: #10191d;
+      --panel2: #142126;
+      --text: #edf6f7;
+      --muted: #9fb2b7;
+      --accent: #2ec4b6;
+      --line: #213238;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(180deg, #081014 0%, #0c171b 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .wrap {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 32px 20px 72px;
+    }
+    .hero { padding: 72px 0 36px; }
+    .eyebrow {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 14px;
+      margin-bottom: 14px;
+    }
+    h1 {
+      font-size: clamp(2.6rem, 6vw, 5rem);
+      line-height: 1.03;
+      margin: 0 0 18px;
+    }
+    .sub {
+      color: var(--muted);
+      max-width: 760px;
+      font-size: 1.1rem;
+      margin-bottom: 26px;
+    }
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      border: 1px solid var(--line);
+    }
+    .btn.primary {
+      background: var(--accent);
+      color: #061013;
+      border-color: var(--accent);
+    }
+    .btn.secondary {
+      color: var(--text);
+      background: transparent;
+    }
+    section { margin-top: 46px; }
+    h2 { font-size: 1.7rem; margin-bottom: 12px; }
+    p, li { color: var(--muted); }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
+    .card {
+      background: linear-gradient(180deg, var(--panel) 0%, var(--panel2) 100%);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 20px;
+    }
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 8px;
+      color: var(--accent);
+    }
+    code {
+      background: #0a1418;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 2px 6px;
+      color: #d9fffa;
+    }
+    .footer {
+      margin-top: 56px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div class="eyebrow">IACK Framework</div>
+      <h1>Integrity. Authenticity. Confidentiality. Key Management.</h1>
+      <p class="sub">
+        IACK is a research-oriented cybersecurity framework focused on testable security metrics,
+        validation logic, reproducible experimentation, and clearer links between implementation and formal study.
+      </p>
+      <div class="actions">
+        <a class="btn primary" href="https://github.com/Anthonybryan2021/iack-framework" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a class="btn secondary" href="https://pypi.org/project/iack-framework/" target="_blank" rel="noopener noreferrer">PyPI</a>
+      </div>
+      <p>Open-source framework for structured security measurement, validation, and research-friendly development.</p>
+    </section>
+
+    <section>
+      <h2>Framework pillars</h2>
+      <div class="grid">
+        <div class="card"><h3>Integrity</h3><p>Measure and preserve trustworthy system state and inputs.</p></div>
+        <div class="card"><h3>Authenticity</h3><p>Support traceable origin, verification, and confidence in assertions.</p></div>
+        <div class="card"><h3>Confidentiality</h3><p>Evaluate exposure, access control, and sensitive data handling.</p></div>
+        <div class="card"><h3>Key Management</h3><p>Emphasize cryptographic lifecycle discipline in real environments.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Why IACK</h2>
+      <p>
+        The framework is designed to support clearer research questions, repeatable testing, and stronger links
+        between practical cybersecurity engineering and formal academic study.
+      </p>
+    </section>
+
+    <section>
+      <h2>Quick install</h2>
+      <p><code>pip install iack-framework</code></p>
+    </section>
+
+    <section>
+      <h2>Project links</h2>
+      <ul>
+        <li><a href="https://github.com/Anthonybryan2021/iack-framework" target="_blank" rel="noopener noreferrer">Repository</a></li>
+        <li><a href="https://github.com/Anthonybryan2021/iack-framework/blob/main/ROADMAP.md" target="_blank" rel="noopener noreferrer">Roadmap</a></li>
+        <li><a href="https://pypi.org/project/iack-framework/" target="_blank" rel="noopener noreferrer">PyPI package</a></li>
+      </ul>
+    </section>
+
+    <div class="footer">
+      <p>IACK • Apache 2.0 • Built for research, validation, and open collaboration.</p>
+    </div>
+  </div>
+</body>
+</html>
