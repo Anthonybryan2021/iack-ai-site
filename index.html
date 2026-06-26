@@ -133,6 +133,29 @@
       color: #d9fffa;
     }
 
+    .hub-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .hub-nav a {
+      display: inline-block;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: var(--text);
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .hub-nav a:hover {
+      background: rgba(46, 196, 182, 0.12);
+      border-color: var(--accent);
+      color: var(--text);
+    }
+
     .footer {
       margin-top: 56px;
       padding-top: 24px;
@@ -230,6 +253,14 @@
         The sections below provide a step-by-step academic path through the IACK framework so that learners can move
         from core concepts to implementation, verification, evidence review, and disciplined release practice.
       </p>
+      <div class="hub-nav" aria-label="Learning navigation">
+        <a href="#foundations">Foundations</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#validation">Validation</a>
+        <a href="#metrics">Metrics</a>
+        <a href="#cockpit">Cockpit</a>
+        <a href="#release-discipline">Release Discipline</a>
+      </div>
     </section>
 
     <section id="foundations">
