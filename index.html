@@ -327,15 +327,49 @@
     <section id="mathematical-model">
       <h2>Mathematical Model</h2>
       <p>
-        Mathematical Model documents the variables, formulas, assumptions, and transformation logic that support IACK scoring
-        and formal analysis. This section should help learners understand how the framework translates structured inputs into
-        interpretable security measurements.
+        The IACK mathematical model explains how structured assessment inputs are converted into interpretable security outputs.
+        At the center of this process is <code>compute_iack_metrics</code>, which transforms evidence-backed values into a repeatable
+        set of framework results designed for validation, comparison, and research-oriented interpretation.
+      </p>
+      <p>
+        In practical terms, the model begins with assessment inputs that describe the observed security condition of a target environment.
+        Those inputs are evaluated through framework logic tied to the IACK pillars: integrity, authenticity, confidentiality, and key management.
+        The purpose of the model is not only to generate a score, but to preserve traceability between observed conditions, scoring assumptions,
+        and final interpretation.
+      </p>
+      <div class="grid">
+        <div class="card">
+          <h3>Core variables</h3>
+          <p>Inputs should represent measurable security conditions, control observations, or validated assessment responses that can be traced back to evidence.</p>
+        </div>
+        <div class="card">
+          <h3>Transformation logic</h3>
+          <p>The model applies structured rules, weights, or scoring logic to convert raw inputs into normalized framework outputs.</p>
+        </div>
+        <div class="card">
+          <h3>Interpretation</h3>
+          <p>Outputs should be readable as meaningful security states, not just abstract numbers, so that the framework supports both operations and study.</p>
+        </div>
+        <div class="card">
+          <h3>Repeatability</h3>
+          <p>The same validated inputs should produce consistent outputs, making the model suitable for comparison, auditing, and reproducible analysis.</p>
+        </div>
+      </div>
+      <p>
+        A useful way to think about the model is as a documented path:
+        <code>assessment-input.json -&gt; compute_iack_metrics -&gt; current-metrics.json -&gt; cockpit interpretation</code>.
+        This path matters because it preserves a clear connection between what was assessed, how it was processed, and what was finally reported.
       </p>
       <ul>
-        <li>Define the variables and assumptions used in the model.</li>
-        <li>Explain how formulas or weighted logic produce metric outputs.</li>
-        <li>Clarify how the model supports repeatability, interpretation, and academic study.</li>
+        <li>Define each input variable in terms of evidence, source, and expected value meaning.</li>
+        <li>Document scoring assumptions, including weighting, normalization, thresholds, and interpretation boundaries.</li>
+        <li>Explain how validation affects confidence in the resulting metric outputs.</li>
+        <li>Clarify which outputs are descriptive, which are comparative, and which are decision-support signals.</li>
       </ul>
+      <p>
+        Over time, this section can grow into the formal reference for IACK equations, threshold definitions, and scoring revisions.
+        That makes the mathematical layer not just a technical implementation detail, but an academic record of how the framework reasons about security conditions.
+      </p>
     </section>
 
     <section id="cockpit">
@@ -354,15 +388,49 @@
     <section id="architecture">
       <h2>Architecture</h2>
       <p>
-        Architecture explains the structural design of the IACK framework, including components, data flow, evidence movement,
-        and the reasoning behind the framework’s organization. This section should help learners connect implementation structure
-        with validation goals, traceability, and long-term maintainability.
+        The IACK architecture is organized as a traceable workflow that connects assessment intake, metric generation, validation history,
+        evidence publication, and cockpit presentation. Its structure is intended to support clarity, repeatability, and long-term extension
+        without losing visibility into how outputs were produced.
+      </p>
+      <p>
+        At the workflow level, the framework can be understood as an orchestrated pipeline driven by <code>run-iack-pipeline.ps1</code>.
+        That orchestration layer can execute Python-based metric generation, update <code>current-metrics.json</code>, append validation history,
+        optionally record formula changes, and complete a publish-ready Git workflow when needed.
+      </p>
+      <div class="grid">
+        <div class="card">
+          <h3>Assessment input</h3>
+          <p><code>assessment-input.json</code> acts as the structured entry point for observed conditions, questionnaire results, validation datasets, or upstream artifacts.</p>
+        </div>
+        <div class="card">
+          <h3>Metric engine</h3>
+          <p>The metric-generation logic processes inputs into framework outputs that can be reviewed, compared, and reused across runs.</p>
+        </div>
+        <div class="card">
+          <h3>Validation history</h3>
+          <p>Historical validation records preserve evidence of what was checked, what changed, and how confidence in outputs should be understood.</p>
+        </div>
+        <div class="card">
+          <h3>Cockpit surface</h3>
+          <p>The cockpit reads published artifacts such as <code>current-metrics.json</code> and turns them into an operational and academic review layer.</p>
+        </div>
+      </div>
+      <p>
+        The architectural flow can be described as:
+        <code>input capture -&gt; metric computation -&gt; validation and history update -&gt; artifact publication -&gt; cockpit consumption</code>.
+        This design is strong because each stage has a distinct responsibility while still contributing to a single evidence-backed narrative.
       </p>
       <ul>
-        <li>Identify the major framework components and their responsibilities.</li>
-        <li>Explain how data, validation outputs, and evidence move through the system.</li>
-        <li>Document the design rationale that supports clarity, trust, and future extension.</li>
+        <li>Document the purpose of each component, script, data artifact, and review surface.</li>
+        <li>Explain how evidence moves from assessment intake to published metric outputs.</li>
+        <li>Clarify how validation history and formula changes preserve traceability over time.</li>
+        <li>Show how the cockpit serves as a consumption layer rather than the source of truth itself.</li>
       </ul>
+      <p>
+        This architecture also prepares IACK for later expansion, including stronger automation, external integrations, MITRE ATT&amp;CK mapping,
+        and eventually cloud-based deployment patterns. By documenting the architecture explicitly, the framework becomes easier to study,
+        maintain, explain, and extend without weakening its research discipline.
+      </p>
     </section>
 
     <section id="release-discipline">
