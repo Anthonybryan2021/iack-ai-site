@@ -370,6 +370,26 @@
         Over time, this section can grow into the formal reference for IACK equations, threshold definitions, and scoring revisions.
         That makes the mathematical layer not just a technical implementation detail, but an academic record of how the framework reasons about security conditions.
       </p>
+      <h3>Scoring example</h3>
+      <p>
+        The example below shows how a pillar score can be expressed as a weighted interpretation of validated inputs.
+        It is a documentation example intended to illustrate the logic path from observed condition to final score.
+      </p>
+      <pre><code>Pillar Score = ((Input Strength × Weight) + Validation Confidence) / Normalization Factor
+
+Example:
+Integrity Input Strength = 82
+Integrity Weight = 0.40
+Validation Confidence = 12
+Normalization Factor = 1.00
+
+Integrity Pillar Score = ((82 × 0.40) + 12) / 1.00
+Integrity Pillar Score = 44.8
+
+Interpretation:
+- Higher validated inputs increase the pillar score.
+- Confidence from validation affects how strongly the score should be trusted.
+- Final scoring remains meaningful only when assumptions and thresholds are documented.</code></pre>
     </section>
 
     <section id="cockpit">
@@ -431,6 +451,28 @@
         and eventually cloud-based deployment patterns. By documenting the architecture explicitly, the framework becomes easier to study,
         maintain, explain, and extend without weakening its research discipline.
       </p>
+      <h3>Architecture flow example</h3>
+      <p>
+        The following diagram shows the high-level evidence and publication path used by the framework.
+        It gives learners a direct view of how assessment inputs become cockpit-visible outputs.
+      </p>
+      <pre><code>assessment-input.json
+        |
+        v
+compute_iack_metrics
+        |
+        v
+current-metrics.json
+        |
+        +--> validation history
+        |
+        +--> formula change log
+        |
+        v
+IACK Cockpit
+        |
+        v
+Operational review and academic interpretation</code></pre>
     </section>
 
     <section id="release-discipline">
