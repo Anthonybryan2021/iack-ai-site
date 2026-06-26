@@ -395,6 +395,18 @@ Interpretation labels:
 - A passed validation state increases trust in the score interpretation.
 - Open findings prevent the score from being treated as final perfection.
 - Pillar-level values help analysts identify which domain needs closer review.</code></pre>
+      <h3>Variable definitions</h3>
+      <ul>
+        <li><code>overallScore</code>: the combined framework result for the current assessed run.</li>
+        <li><code>validationStatus</code>: the documented validation outcome attached to the current metric state.</li>
+        <li><code>confidence</code>: the degree of trust assigned to the current interpreted output.</li>
+        <li><code>openFindings</code>: the number of unresolved issues still requiring analyst review.</li>
+        <li><code>pillars.integrity</code>: the integrity-specific pillar result inside the broader IACK model.</li>
+      </ul>
+      <p>
+        These variables make the model easier to read as a formal system because each output can be traced to a named concept,
+        an interpretation rule, and a place in the broader framework workflow.
+      </p>
     </section>
 
     <section id="cockpit">
@@ -504,6 +516,31 @@ Interpretation labels:
           <line class="line" x1="495" y1="134" x2="495" y2="162"></line>
         </svg>
       </div>
+      <h3>Artifact glossary</h3>
+      <ul>
+        <li><code>assessment-input.json</code>: the structured entry artifact describing the assessed conditions for a run.</li>
+        <li><code>current-metrics.json</code>: the current published metric state used for review, reporting, and cockpit display.</li>
+        <li><code>validation-history.json</code>: the historical record of validation outcomes and traceable review changes over time.</li>
+        <li><code>formula-changelog.json</code>: the record of model or scoring changes that affect interpretation across versions.</li>
+      </ul>
+      <p>
+        Together these artifacts make the framework easier to audit because they separate input conditions, metric output,
+        validation history, and formula evolution into explicit evidence layers.
+      </p>
+      <h3>MITRE ATT&amp;CK mapping</h3>
+      <p>
+        A future IACK extension should map framework metrics and validation outputs to relevant MITRE ATT&amp;CK techniques so that
+        model results can be connected to recognized adversary behavior categories and practical defensive decision-making.
+      </p>
+      <ul>
+        <li>Tactic alignment: relate IACK findings to attacker objectives such as execution, persistence, privilege escalation, or defense evasion.</li>
+        <li>Technique linkage: connect validation outcomes or evidence patterns to specific ATT&amp;CK techniques where appropriate.</li>
+        <li>Defensive response: use mapped outputs to inform control selection, integration priorities, and follow-on review actions.</li>
+      </ul>
+      <p>
+        This mapping should be treated as a documented roadmap extension rather than a finished claim, preserving the academic discipline
+        of the current release while showing how IACK can grow into a stronger operational research reference.
+      </p>
     </section>
 
     <section id="release-discipline">
