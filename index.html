@@ -541,6 +541,40 @@ Interpretation labels:
         This mapping should be treated as a documented roadmap extension rather than a finished claim, preserving the academic discipline
         of the current release while showing how IACK can grow into a stronger operational research reference.
       </p>
+      <h3>Concrete ATT&amp;CK example</h3>
+      <p>
+        One practical starting example is to map an IACK authentication-related validation concern to
+        <code>T1078 Valid Accounts</code>. In ATT&amp;CK, this technique covers the abuse of legitimate credentials,
+        which makes it a useful reference point when IACK outputs suggest elevated trust risk around account use,
+        authentication anomalies, or evidence that a valid account may be operating outside expected patterns.
+      </p>
+      <ul>
+        <li><strong>Tactic context</strong>: valid-account abuse can support initial access, persistence, privilege escalation, or defense evasion depending on how the account is used.</li>
+        <li><strong>IACK interpretation</strong>: if validation shows trusted account activity with unresolved findings or weak confidence, the framework can flag that condition for closer review.</li>
+        <li><strong>Defensive implication</strong>: the next action may be tighter log review, privileged-account scrutiny, authentication hardening, or stronger anomaly detection around account behavior.</li>
+      </ul>
+      <h3>JSON evidence example</h3>
+      <pre><code>{
+  "assessmentId": "iack-2026-06-26-001",
+  "overallScore": 81,
+  "validationStatus": "Passed",
+  "confidence": 0.91,
+  "openFindings": 5,
+  "pillars": {
+    "integrity": 78,
+    "authenticity": 83,
+    "confidentiality": 80,
+    "keyManagement": 84
+  },
+  "changeSummary": [
+    "Integrity score dropped 3 points after artifact drift detection.",
+    "Validation coverage improved after metric test alignment."
+  ]
+}</code></pre>
+      <p>
+        This small artifact example makes the documentation more tangible because readers can see how a real metric object supports
+        interpretation, validation discussion, and future ATT&amp;CK alignment without needing to leave the Learning Hub.
+      </p>
     </section>
 
     <section id="release-discipline">
